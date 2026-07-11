@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="Arial, sans-serif">
+  <rect width="900" height="560" fill="white"/>
+
+  <!-- System boundary -->
+  <rect x="230" y="30" width="520" height="500" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="490" y="55" font-size="16" font-weight="bold" text-anchor="middle">Sistema de Gerenciamento de Tarefas</text>
+
+  <!-- Actor: Membro da Equipe -->
+  <g stroke="#1f2d5c" stroke-width="2" fill="none">
+    <circle cx="70" cy="150" r="14"/>
+    <line x1="70" y1="164" x2="70" y2="210"/>
+    <line x1="40" y1="185" x2="100" y2="185"/>
+    <line x1="70" y1="210" x2="45" y2="245"/>
+    <line x1="70" y1="210" x2="95" y2="245"/>
+  </g>
+  <text x="70" y="265" font-size="13" text-anchor="middle">Membro da</text>
+  <text x="70" y="280" font-size="13" text-anchor="middle">Equipe</text>
+
+  <!-- Actor: Gestor do Projeto -->
+  <g stroke="#1f2d5c" stroke-width="2" fill="none">
+    <circle cx="70" cy="360" r="14"/>
+    <line x1="70" y1="374" x2="70" y2="420"/>
+    <line x1="40" y1="395" x2="100" y2="395"/>
+    <line x1="70" y1="420" x2="45" y2="455"/>
+    <line x1="70" y1="420" x2="95" y2="455"/>
+  </g>
+  <text x="70" y="475" font-size="13" text-anchor="middle">Gestor do</text>
+  <text x="70" y="490" font-size="13" text-anchor="middle">Projeto</text>
+
+  <!-- Actor: Cliente (startup logistica) -->
+  <g stroke="#1f2d5c" stroke-width="2" fill="none">
+    <circle cx="830" cy="150" r="14"/>
+    <line x1="830" y1="164" x2="830" y2="210"/>
+    <line x1="800" y1="185" x2="860" y2="185"/>
+    <line x1="830" y1="210" x2="805" y2="245"/>
+    <line x1="830" y1="210" x2="855" y2="245"/>
+  </g>
+  <text x="830" y="265" font-size="13" text-anchor="middle">Cliente</text>
+  <text x="830" y="280" font-size="13" text-anchor="middle">(Logística)</text>
+
+  <!-- Use cases (ellipses) -->
+  <g>
+    <ellipse cx="410" cy="100" rx="105" ry="30" fill="#eef1fb" stroke="#1f2d5c" stroke-width="1.5"/>
+    <text x="410" y="105" font-size="13" text-anchor="middle">Criar Tarefa</text>
+
+    <ellipse cx="410" cy="170" rx="105" ry="30" fill="#eef1fb" stroke="#1f2d5c" stroke-width="1.5"/>
+    <text x="410" y="175" font-size="13" text-anchor="middle">Listar / Consultar Tarefas</text>
+
+    <ellipse cx="410" cy="240" rx="105" ry="30" fill="#eef1fb" stroke="#1f2d5c" stroke-width="1.5"/>
+    <text x="410" y="238" font-size="13" text-anchor="middle">Atualizar Status</text>
+    <text x="410" y="253" font-size="13" text-anchor="middle">da Tarefa</text>
+
+    <ellipse cx="410" cy="320" rx="120" ry="32" fill="#fdeeee" stroke="#d63031" stroke-width="1.5"/>
+    <text x="410" y="316" font-size="13" text-anchor="middle" font-weight="bold">Priorizar Tarefa Crítica</text>
+    <text x="410" y="331" font-size="11" text-anchor="middle" fill="#d63031">(mudança de escopo)</text>
+
+    <ellipse cx="410" cy="400" rx="105" ry="30" fill="#eef1fb" stroke="#1f2d5c" stroke-width="1.5"/>
+    <text x="410" y="405" font-size="13" text-anchor="middle">Remover Tarefa</text>
+
+    <ellipse cx="410" cy="470" rx="130" ry="32" fill="#eef1fb" stroke="#1f2d5c" stroke-width="1.5"/>
+    <text x="410" y="468" font-size="13" text-anchor="middle">Monitorar Desempenho</text>
+    <text x="410" y="483" font-size="13" text-anchor="middle">da Equipe</text>
+  </g>
+
+  <!-- Connections: Membro da Equipe -->
+  <g stroke="#555" stroke-width="1.2">
+    <line x1="100" y1="160" x2="305" y2="105"/>
+    <line x1="100" y1="180" x2="305" y2="170"/>
+    <line x1="100" y1="200" x2="290" y2="240"/>
+    <line x1="100" y1="215" x2="290" y2="320"/>
+    <line x1="100" y1="230" x2="305" y2="400"/>
+  </g>
+
+  <!-- Connections: Gestor -->
+  <g stroke="#555" stroke-width="1.2">
+    <line x1="100" y1="370" x2="290" y2="240"/>
+    <line x1="100" y1="385" x2="280" y2="470"/>
+  </g>
+
+  <!-- Connections: Cliente -->
+  <g stroke="#555" stroke-width="1.2">
+    <line x1="800" y1="180" x2="515" y2="170"/>
+    <line x1="800" y1="200" x2="530" y2="470"/>
+  </g>
+
+  <text x="450" y="545" font-size="12" text-anchor="middle" fill="#666">
+    Diagrama de Casos de Uso — TechFlow TaskManager
+  </text>
+</svg>

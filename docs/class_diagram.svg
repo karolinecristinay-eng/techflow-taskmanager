@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="Arial, sans-serif">
+  <rect width="900" height="480" fill="white"/>
+
+  <!-- Task class -->
+  <g>
+    <rect x="480" y="40" width="330" height="240" fill="#eef1fb" stroke="#1f2d5c" stroke-width="1.5"/>
+    <line x1="480" y1="75" x2="810" y2="75" stroke="#1f2d5c" stroke-width="1.5"/>
+    <line x1="480" y1="205" x2="810" y2="205" stroke="#1f2d5c" stroke-width="1.5"/>
+    <text x="645" y="62" font-size="15" font-weight="bold" text-anchor="middle">Task</text>
+
+    <text x="495" y="95" font-size="12">- id: int</text>
+    <text x="495" y="113" font-size="12">- title: str</text>
+    <text x="495" y="131" font-size="12">- description: str</text>
+    <text x="495" y="149" font-size="12">- status: str</text>
+    <text x="495" y="167" font-size="12" font-weight="bold" fill="#d63031">- priority: str  «adicionado»</text>
+    <text x="495" y="185" font-size="12">- created_at / updated_at: str</text>
+
+    <text x="495" y="225" font-size="12">+ to_dict(): dict</text>
+  </g>
+
+  <!-- TaskRepository class -->
+  <g>
+    <rect x="60" y="40" width="340" height="330" fill="#eef1fb" stroke="#1f2d5c" stroke-width="1.5"/>
+    <line x1="60" y1="75" x2="400" y2="75" stroke="#1f2d5c" stroke-width="1.5"/>
+    <line x1="60" y1="150" x2="400" y2="150" stroke="#1f2d5c" stroke-width="1.5"/>
+    <text x="230" y="62" font-size="15" font-weight="bold" text-anchor="middle">TaskRepository</text>
+
+    <text x="75" y="95" font-size="12">- tasks: dict[int, Task]</text>
+    <text x="75" y="113" font-size="12">- id_counter: Iterator</text>
+
+    <text x="75" y="170" font-size="12">+ create(title, description, status, priority): Task</text>
+    <text x="75" y="188" font-size="12">+ list_all(status, priority): list[Task]</text>
+    <text x="75" y="206" font-size="12">+ get(task_id): Task</text>
+    <text x="75" y="224" font-size="12">+ update(task_id, **fields): Task</text>
+    <text x="75" y="242" font-size="12">+ delete(task_id): None</text>
+  </g>
+
+  <!-- Exception classes -->
+  <g>
+    <rect x="60" y="410" width="150" height="55" fill="#fdeeee" stroke="#d63031" stroke-width="1.5"/>
+    <text x="135" y="432" font-size="11" font-weight="bold" text-anchor="middle">ValidationError</text>
+    <text x="135" y="448" font-size="10" text-anchor="middle">(Exception)</text>
+
+    <rect x="250" y="410" width="150" height="55" fill="#fdeeee" stroke="#d63031" stroke-width="1.5"/>
+    <text x="325" y="432" font-size="11" font-weight="bold" text-anchor="middle">TaskNotFoundError</text>
+    <text x="325" y="448" font-size="10" text-anchor="middle">(Exception)</text>
+  </g>
+
+  <!-- Relacionamento TaskRepository 1 para * Task -->
+  <g stroke="#1f2d5c" stroke-width="1.5">
+    <line x1="400" y1="160" x2="480" y2="160"/>
+  </g>
+  <polygon points="470,155 480,160 470,165" fill="#1f2d5c"/>
+  <text x="415" y="152" font-size="11">1</text>
+  <text x="460" y="152" font-size="11">0..*</text>
+  <text x="405" y="175" font-size="11" font-style="italic">gerencia</text>
+
+  <!-- Relacionamento de dependencia TaskRepository para excecoes (tracejado) -->
+  <g stroke="#d63031" stroke-width="1" stroke-dasharray="5,3">
+    <line x1="150" y1="370" x2="135" y2="410"/>
+    <line x1="300" y1="370" x2="325" y2="410"/>
+  </g>
+  <text x="450" y="460" font-size="12" text-anchor="middle" fill="#666">
+    Diagrama de Classes — TechFlow TaskManager
+  </text>
+</svg>
