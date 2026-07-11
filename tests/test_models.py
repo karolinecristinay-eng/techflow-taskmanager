@@ -80,6 +80,12 @@ def test_update_task_fields(repo):
     assert updated.status == "in_progress"
 
 
+def test_update_task_empty_title_raises(repo):
+    task = repo.create(title="Antigo título")
+    with pytest.raises(ValidationError):
+        repo.update(task.id, title="   ")
+
+
 def test_update_missing_task_raises(repo):
     with pytest.raises(TaskNotFoundError):
         repo.update(999, title="qualquer")

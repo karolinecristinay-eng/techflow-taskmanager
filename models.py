@@ -101,6 +101,11 @@ class TaskRepository:
             raise ValidationError(f"Status inválido. Use um de: {VALID_STATUSES}")
         if "priority" in fields and fields["priority"] not in VALID_PRIORITIES:
             raise ValidationError(f"Prioridade inválida. Use um de: {VALID_PRIORITIES}")
+        if "title" in fields:
+            title = (fields["title"] or "").strip()
+            if not title:
+                raise ValidationError("O campo 'title' é obrigatório.")
+            fields["title"] = title
 
         for key in ("title", "description", "status", "priority"):
             if key in fields and fields[key] is not None:
