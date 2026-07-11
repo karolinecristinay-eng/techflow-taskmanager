@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>TechFlow TaskManager</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; background:#f6f7fb; }
+        h1 { color: #1f2d5c; }
+        .board { display: flex; gap: 16px; }
+        .column { flex: 1; background: white; border-radius: 8px; padding: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+        .column h2 { font-size: 15px; text-transform: uppercase; color: #555; }
+        .card { border-left: 4px solid #ccc; background: #fafafa; padding: 8px; margin-bottom: 8px; border-radius: 4px; }
+        .card.critical { border-color: #d63031; }
+        .card.high { border-color: #e17055; }
+        .card.medium { border-color: #0984e3; }
+        .card.low { border-color: #b2bec3; }
+        form { margin-top: 24px; background: white; padding: 16px; border-radius: 8px; }
+        input, select, textarea { display:block; margin: 6px 0 12px; width: 100%; padding: 6px; }
+        button { background:#1f2d5c; color:white; border:none; padding:8px 16px; border-radius:4px; cursor:pointer; }
+    </style>
+</head>
+<body>
+    <h1>TechFlow Solutions — Gerenciador de Tarefas</h1>
+    <p>Sistema de apoio à metodologia ágil da equipe (colunas equivalentes ao quadro Kanban do GitHub Projects).</p>
+
+    <div class="board">
+        {% for status_key, status_label in [("todo", "A Fazer"), ("in_progress", "Em Progresso"), ("done", "Concluído")] %}
+        <div class="column">
+            <h2>{{ status_label }}</h2>
+            {% for task in tasks if task.status == status_key %}
+            <div class="card {{ task.priority }}">
+                <strong>{{ task.title }}</strong><br>
+                <small>{{ task.description }}</small><br>
+                <small>Prioridade: {{ task.priority }}</small>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <form action="/api/tasks" method="post">
+        <h3>Nova tarefa</h3>
+        <input name="title" placeholder="Título" required>
+        <textarea name="description" placeholder="Descrição"></textarea>
+        <select name="status">
+            {% for s in statuses %}<option value="{{ s }}">{{ s }}</option>{% endfor %}
+        </select>
+        <select name="priority">
+            {% for p in priorities %}<option value="{{ p }}">{{ p }}</option>{% endfor %}
+        </select>
+        <button type="submit">Criar tarefa</button>
+    </form>
+</body>
+</html>
