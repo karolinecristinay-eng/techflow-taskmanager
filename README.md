@@ -37,17 +37,14 @@ princípio ágil de entregas incrementais.
 
 ```
 techflow-taskmanager/
-├── src/
-│   ├── app.py            # Camada web (Flask): rotas da API REST e da UI
-│   ├── models.py          # Camada de domínio: Task e TaskRepository (regra de negócio)
-│   └── templates/
-│       └── index.html     # Interface simples do quadro Kanban
+├── app.py                 # Camada web (Flask): rotas da API REST e da UI
+├── models.py              # Camada de domínio: Task e TaskRepository (regra de negócio)
+├── templates/
+│   └── index.html         # Interface simples do quadro Kanban
 ├── tests/
 │   ├── test_models.py     # Testes unitários da regra de negócio
 │   └── test_app.py        # Testes de integração da API REST
-├── docs/                   # Diagramas UML e documentação complementar
-├── .github/workflows/
-│   └── ci.yml              # Pipeline de Integração Contínua (GitHub Actions)
+├── docs/                  # Diagramas UML e documentação complementar
 ├── requirements.txt
 └── README.md
 ```
@@ -71,7 +68,6 @@ source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 # 4. Rodar a aplicação
-cd src
 python app.py
 ```
 
@@ -97,10 +93,9 @@ pip install -r requirements.txt
 pytest -v
 ```
 
-O pipeline de **Integração Contínua** (`.github/workflows/ci.yml`) executa
-automaticamente todos os testes a cada `push` e `pull request` na branch
-`main`, garantindo que nenhuma alteração quebre o funcionamento do sistema
-antes de ser integrada.
+Uma pipeline de **Integração Contínua** pode ser adicionada com GitHub Actions
+ou outra ferramenta, garantindo que os testes sejam executados a cada `push`
+ou `pull request` na branch `main`.
 
 ## 🔄 Gestão de Mudanças (alteração de escopo)
 

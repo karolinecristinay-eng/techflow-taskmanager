@@ -8,6 +8,7 @@ Expõe:
 """
 
 from flask import Flask, jsonify, request, render_template
+from werkzeug.exceptions import BadRequest
 
 from models import TaskRepository, ValidationError, TaskNotFoundError, VALID_PRIORITIES, VALID_STATUSES
 
@@ -24,6 +25,23 @@ def create_app(repo: TaskRepository | None = None) -> Flask:
         task_repo.create("Escrever documentação no README", status="todo", priority="medium")
 
     app.repo = task_repo
+
+    def parse_request_data() -> dict:
+        if request.is_json:
+            return request.get_json()
+        return request.form.to_dict()
+
+    @app.errorhandler(ValidationError)
+    def handle_validation_error(error):
+        return jsonify({"error": str(error)}), 400
+
+    @app.errorhandler(TaskNotFoundError)
+    def handle_task_not_found(error):
+        return jsonify({"error": str(error)}), 404
+
+    @app.errorhandler(BadRequest)
+    def handle_bad_request(error):
+        return jsonify({"error": "JSON inválido."}), 400
 
     @app.get("/")
     def index():
@@ -43,43 +61,29 @@ def create_app(repo: TaskRepository | None = None) -> Flask:
 
     @app.post("/api/tasks")
     def create_task():
-        data = request.get_json(silent=True) or request.form
-        try:
-            task = app.repo.create(
-                title=data.get("title"),
-                description=data.get("description", ""),
-                status=data.get("status", "todo"),
-                priority=data.get("priority", "medium"),
-            )
-        except ValidationError as e:
-            return jsonify({"error": str(e)}), 400
+        data = parse_request_data()
+        task = app.repo.create(
+            title=data.get("title"),
+            description=data.get("description", ""),
+            status=data.get("status", "todo"),
+            priority=data.get("priority", "medium"),
+        )
         return jsonify(task.to_dict()), 201
 
     @app.get("/api/tasks/<int:task_id>")
     def get_task(task_id):
-        try:
-            task = app.repo.get(task_id)
-        except TaskNotFoundError as e:
-            return jsonify({"error": str(e)}), 404
+        task = app.repo.get(task_id)
         return jsonify(task.to_dict())
 
     @app.put("/api/tasks/<int:task_id>")
     def update_task(task_id):
-        data = request.get_json(silent=True) or request.form
-        try:
-            task = app.repo.update(task_id, **data)
-        except TaskNotFoundError as e:
-            return jsonify({"error": str(e)}), 404
-        except ValidationError as e:
-            return jsonify({"error": str(e)}), 400
+        data = parse_request_data()
+        task = app.repo.update(task_id, **data)
         return jsonify(task.to_dict())
 
     @app.delete("/api/tasks/<int:task_id>")
     def delete_task(task_id):
-        try:
-            app.repo.delete(task_id)
-        except TaskNotFoundError as e:
-            return jsonify({"error": str(e)}), 404
+        app.repo.delete(task_id)
         return "", 204
 
     return app

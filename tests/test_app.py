@@ -8,7 +8,7 @@ import sys
 
 import pytest
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from app import create_app  # noqa: E402
 from models import TaskRepository  # noqa: E402
@@ -55,6 +55,16 @@ def test_create_task_via_api(client):
 def test_create_task_without_title_returns_400(client):
     response = client.post("/api/tasks", json={"title": ""})
     assert response.status_code == 400
+
+
+def test_create_task_with_invalid_json_returns_400(client):
+    response = client.post(
+        "/api/tasks",
+        data="{ invalid json }",
+        content_type="application/json",
+    )
+    assert response.status_code == 400
+    assert response.get_json()["error"] == "JSON inválido."
 
 
 def test_get_missing_task_returns_404(client):
