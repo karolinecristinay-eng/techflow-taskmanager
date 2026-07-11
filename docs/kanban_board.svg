@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 640" font-family="Arial, sans-serif">
+  <rect width="980" height="640" fill="#f6f7fb"/>
+  <text x="490" y="35" font-size="20" font-weight="bold" text-anchor="middle" fill="#1f2d5c">TechFlow TaskManager — Quadro Kanban</text>
+
+  <!-- Column headers -->
+  <rect x="20" y="60" width="300" height="40" fill="#1f2d5c"/>
+  <text x="170" y="86" font-size="15" fill="white" text-anchor="middle" font-weight="bold">A FAZER</text>
+
+  <rect x="340" y="60" width="300" height="40" fill="#1f2d5c"/>
+  <text x="490" y="86" font-size="15" fill="white" text-anchor="middle" font-weight="bold">EM PROGRESSO</text>
+
+  <rect x="660" y="60" width="300" height="40" fill="#1f2d5c"/>
+  <text x="810" y="86" font-size="15" fill="white" text-anchor="middle" font-weight="bold">CONCLUÍDO</text>
+
+  <!-- Column backgrounds -->
+  <rect x="20" y="100" width="300" height="520" fill="#eceef5"/>
+  <rect x="340" y="100" width="300" height="520" fill="#eceef5"/>
+  <rect x="660" y="100" width="300" height="520" fill="#eceef5"/>
+
+  <!-- Card template function replicated manually -->
+  <!-- A FAZER cards -->
+  <g>
+    <rect x="35" y="115" width="270" height="55" rx="4" fill="white" stroke="#b2bec3" stroke-width="1.5"/>
+    <rect x="35" y="115" width="6" height="55" fill="#0984e3"/>
+    <text x="50" y="138" font-size="12">Escrever testes de integração</text>
+    <text x="50" y="155" font-size="12">da API REST</text>
+  </g>
+  <g>
+    <rect x="35" y="180" width="270" height="55" rx="4" fill="white" stroke="#b2bec3" stroke-width="1.5"/>
+    <rect x="35" y="180" width="6" height="55" fill="#0984e3"/>
+    <text x="50" y="203" font-size="12">Revisar comentários no</text>
+    <text x="50" y="220" font-size="12">código-fonte</text>
+  </g>
+  <g>
+    <rect x="35" y="245" width="270" height="55" rx="4" fill="white" stroke="#b2bec3" stroke-width="1.5"/>
+    <rect x="35" y="245" width="6" height="55" fill="#0984e3"/>
+    <text x="50" y="268" font-size="12">Gravar vídeo pitch de</text>
+    <text x="50" y="285" font-size="12">apresentação do projeto</text>
+  </g>
+
+  <!-- EM PROGRESSO cards -->
+  <g>
+    <rect x="355" y="115" width="270" height="55" rx="4" fill="white" stroke="#b2bec3" stroke-width="1.5"/>
+    <rect x="355" y="115" width="6" height="55" fill="#e17055"/>
+    <text x="370" y="138" font-size="12">Configurar pipeline de CI</text>
+    <text x="370" y="155" font-size="12">(GitHub Actions)</text>
+  </g>
+  <g>
+    <rect x="355" y="180" width="270" height="70" rx="4" fill="#fdeeee" stroke="#d63031" stroke-width="1.5"/>
+    <rect x="355" y="180" width="6" height="70" fill="#d63031"/>
+    <text x="370" y="203" font-size="12" font-weight="bold">Priorizar tarefas críticas</text>
+    <text x="370" y="220" font-size="11" fill="#d63031">(mudança de escopo)</text>
+    <text x="370" y="237" font-size="10" fill="#888">card da Seção 5</text>
+  </g>
+
+  <!-- CONCLUÍDO cards -->
+  <g>
+    <rect x="675" y="115" width="270" height="42" rx="4" fill="white" stroke="#b2bec3" stroke-width="1.5"/>
+    <rect x="675" y="115" width="6" height="42" fill="#00b894"/>
+    <text x="690" y="140" font-size="12">Modelar diagrama de casos de uso</text>
+  </g>
+  <g>
+    <rect x="675" y="164" width="270" height="42" rx="4" fill="white" stroke="#b2bec3" stroke-width="1.5"/>
+    <rect x="675" y="164" width="6" height="42" fill="#00b894"/>
+    <text x="690" y="189" font-size="12">Modelar diagrama de classes</text>
+  </g>
+  <g>
+    <rect x="675" y="213" width="270" height="42" rx="4" fill="white" stroke="#b2bec3" stroke-width="1.5"/>
+    <rect x="675" y="213" width="6" height="42" fill="#00b894"/>
+    <text x="690" y="238" font-size="12">Implementar modelo Task (CRUD)</text>
+  </g>
+  <g>
+    <rect x="675" y="262" width="270" height="42" rx="4" fill="white" stroke="#b2bec3" stroke-width="1.5"/>
+    <rect x="675" y="262" width="6" height="42" fill="#00b894"/>
+    <text x="690" y="287" font-size="12">Implementar rotas da API REST</text>
+  </g>
+  <g>
+    <rect x="675" y="311" width="270" height="42" rx="4" fill="white" stroke="#b2bec3" stroke-width="1.5"/>
+    <rect x="675" y="311" width="6" height="42" fill="#00b894"/>
+    <text x="690" y="336" font-size="12">Implementar interface HTML</text>
+  </g>
+  <g>
+    <rect x="675" y="360" width="270" height="42" rx="4" fill="white" stroke="#b2bec3" stroke-width="1.5"/>
+    <rect x="675" y="360" width="6" height="42" fill="#00b894"/>
+    <text x="690" y="385" font-size="12">Escrever testes unitários</text>
+  </g>
+  <g>
+    <rect x="675" y="409" width="270" height="42" rx="4" fill="white" stroke="#b2bec3" stroke-width="1.5"/>
+    <rect x="675" y="409" width="6" height="42" fill="#00b894"/>
+    <text x="690" y="434" font-size="12">Escrever README.md</text>
+  </g>
+
+  <text x="490" y="615" font-size="12" text-anchor="middle" fill="#666">
+    Quadro Kanban — TechFlow TaskManager (referência para GitHub Projects)
+  </text>
+</svg>

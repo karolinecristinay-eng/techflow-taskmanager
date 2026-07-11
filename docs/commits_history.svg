@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" font-family="Arial, sans-serif">
+  <rect width="1000" height="620" fill="#f6f8fa"/>
+
+  <!-- Header bar mimicking GitHub -->
+  <rect x="0" y="0" width="1000" height="50" fill="#24292f"/>
+  <text x="20" y="31" font-size="16" fill="white" font-weight="bold">karolinecristinay-eng / techflow-taskmanager</text>
+  <text x="700" y="31" font-size="13" fill="#8b949e">Branch: main · 11 commits</text>
+
+  <!-- Commit rows -->
+  <g font-size="13" fill="#24292f">
+    <!-- template macro repeated manually -->
+  </g>
+
+  <!-- Row 1 -->
+  <rect x="0" y="60" width="1000" height="50" fill="white" stroke="#d0d7de" stroke-width="1"/>
+  <text x="20" y="82" font-size="13" font-weight="bold">commit final</text>
+  <text x="20" y="99" font-size="11" fill="#57606a">karolinecristinay-eng</text>
+  <text x="850" y="90" font-size="11" fill="#57606a">171bef6 · 11 jul 2026</text>
+
+  <!-- Row 2 -->
+  <rect x="0" y="110" width="1000" height="50" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+  <text x="20" y="132" font-size="13" font-weight="bold">commit 9</text>
+  <text x="20" y="149" font-size="11" fill="#57606a">karolinecristinay-eng</text>
+  <text x="850" y="140" font-size="11" fill="#57606a">9c7faf6 · 11 jul 2026</text>
+
+  <!-- Row 3 -->
+  <rect x="0" y="160" width="1000" height="50" fill="white" stroke="#d0d7de" stroke-width="1"/>
+  <text x="20" y="182" font-size="13" font-weight="bold">commit 8</text>
+  <text x="20" y="199" font-size="11" fill="#57606a">karolinecristinay-eng</text>
+  <text x="850" y="190" font-size="11" fill="#57606a">707e049 · 11 jul 2026</text>
+
+  <!-- Row 4 -->
+  <rect x="0" y="210" width="1000" height="50" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+  <text x="20" y="232" font-size="13" font-weight="bold">commit 7</text>
+  <text x="20" y="249" font-size="11" fill="#57606a">karolinecristinay-eng</text>
+  <text x="850" y="240" font-size="11" fill="#57606a">25df8c4 · 11 jul 2026</text>
+
+  <!-- Row 5 -->
+  <rect x="0" y="260" width="1000" height="50" fill="white" stroke="#d0d7de" stroke-width="1"/>
+  <text x="20" y="282" font-size="13" font-weight="bold">commit 6</text>
+  <text x="20" y="299" font-size="11" fill="#57606a">karolinecristinay-eng</text>
+  <text x="850" y="290" font-size="11" fill="#57606a">f239ce0 · 11 jul 2026</text>
+
+  <!-- Row 6 -->
+  <rect x="0" y="310" width="1000" height="50" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+  <text x="20" y="332" font-size="13" font-weight="bold">commit 5</text>
+  <text x="20" y="349" font-size="11" fill="#57606a">karolinecristinay-eng</text>
+  <text x="850" y="340" font-size="11" fill="#57606a">83a7025 · 11 jul 2026</text>
+
+  <!-- Row 7 -->
+  <rect x="0" y="360" width="1000" height="50" fill="white" stroke="#d0d7de" stroke-width="1"/>
+  <text x="20" y="382" font-size="13" font-weight="bold">commit 4</text>
+  <text x="20" y="399" font-size="11" fill="#57606a">karolinecristinay-eng</text>
+  <text x="850" y="390" font-size="11" fill="#57606a">7f06ab5 · 11 jul 2026</text>
+
+  <!-- Row 8 -->
+  <rect x="0" y="410" width="1000" height="50" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+  <text x="20" y="432" font-size="13" font-weight="bold">commit 3</text>
+  <text x="20" y="449" font-size="11" fill="#57606a">karolinecristinay-eng</text>
+  <text x="850" y="440" font-size="11" fill="#57606a">0d59674 · 11 jul 2026</text>
+
+  <!-- Row 9 -->
+  <rect x="0" y="460" width="1000" height="50" fill="white" stroke="#d0d7de" stroke-width="1"/>
+  <text x="20" y="482" font-size="13" font-weight="bold">commit 2</text>
+  <text x="20" y="499" font-size="11" fill="#57606a">karolinecristinay-eng</text>
+  <text x="850" y="490" font-size="11" fill="#57606a">8d93903 · 11 jul 2026</text>
+
+  <!-- Row 10 -->
+  <rect x="0" y="510" width="1000" height="50" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+  <text x="20" y="532" font-size="13" font-weight="bold">commit inicial</text>
+  <text x="20" y="549" font-size="11" fill="#57606a">karolinecristinay-eng</text>
+  <text x="850" y="540" font-size="11" fill="#57606a">70d78f5 · 11 jul 2026</text>
+
+  <!-- Row 11 -->
+  <rect x="0" y="560" width="1000" height="50" fill="white" stroke="#d0d7de" stroke-width="1"/>
+  <text x="20" y="582" font-size="13" font-weight="bold">Initial commit</text>
+  <text x="20" y="599" font-size="11" fill="#57606a">karolinecristinay-eng</text>
+  <text x="850" y="590" font-size="11" fill="#57606a">458d839 · 10 jul 2026</text>
+</svg>
