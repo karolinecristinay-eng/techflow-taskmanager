@@ -10,11 +10,18 @@ import pytest
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
-from app import app  # noqa: E402
+from app import create_app  # noqa: E402
+from models import TaskRepository  # noqa: E402
 
 
 @pytest.fixture
-def client():
+def repo():
+    return TaskRepository()
+
+
+@pytest.fixture
+def client(repo):
+    app = create_app(repo=repo)
     app.config["TESTING"] = True
     with app.test_client() as client:
         yield client
@@ -25,11 +32,13 @@ def test_index_page_loads(client):
     assert response.status_code == 200
 
 
-def test_list_tasks_returns_seed_data(client):
+def test_list_tasks_returns_seed_data(client, repo):
+    repo.create("Modelar diagrama de casos de uso", status="done", priority="high")
+    repo.create("Configurar pipeline de CI no GitHub Actions", status="in_progress", priority="critical")
     response = client.get("/api/tasks")
     assert response.status_code == 200
     data = response.get_json()
-    assert len(data) >= 4
+    assert len(data) == 2
 
 
 def test_create_task_via_api(client):
